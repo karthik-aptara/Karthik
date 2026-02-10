@@ -92,7 +92,7 @@ M.yui.loader = {modules: {}};
       <div class="gbc-hubPro3__content">
 
         
-        <h2 class="gbc-hubPro3__title">Cultural awareness training for global teams</h2>
+        <h2 class="gbc-hubPro3__title">Explore courses for global teams and cross-cultural collaboration</h2>
 
         <p class="gbc-hubPro3__lead">
           Culture Hub provides practical cultural awareness eLearning and country business culture courses designed for organizations working across borders. The learning focuses on real workplace situations so teams can communicate clearly, collaborate effectively, and avoid common misunderstandings.
@@ -106,10 +106,9 @@ M.yui.loader = {modules: {}};
               Build core skills for working across cultures, communication styles, and business environments.
             </p>
 
-            <a class="gbc-hubPro3__rowLink" href="/local/edwiserpagebuilder/page.php?id=12">
-              <span class="gbc-hubPro3__rowText">Explore Course</span>
-              <span class="gbc-hubPro3__rowChevron" aria-hidden="true">›</span>
-            </a>
+            <div class="gbc-hubPro3__subActions">
+              <a class="gbc-hubPro3__btn gbc-hubPro3__btn--primary" href="/local/edwiserpagebuilder/page.php?id=12">Explore Course</a>
+            </div>
           </section>
 
           <section class="gbc-hubPro3__subCard gbc-hubPro3__subCard--explore" aria-label="Explore country business culture">
@@ -127,6 +126,9 @@ M.yui.loader = {modules: {}};
               <span class="gbc-hubPro3__chip">UAE</span>
               <span class="gbc-hubPro3__chip">Philippines</span>
               <span class="gbc-hubPro3__chip gbc-hubPro3__chip--more">and more</span>
+            </div>
+            <div class="gbc-hubPro3__subActions">
+              <a class="gbc-hubPro3__btn gbc-hubPro3__btn--primary" href="#">Explore Courses</a>
             </div>
           </section>
 
@@ -156,19 +158,6 @@ M.yui.loader = {modules: {}};
             </ul>
           </section>
 
-        </div>
-
-        <!-- CTAs (updated per request)
-             - Browse courses button styled like the "first section" CTA:
-               green + darker text + subtle shadow + simple hover
-             - Removed icons from the other CTA buttons
-        -->
-        <div class="gbc-hubPro3__actions" aria-label="Actions">
-          <a class="gbc-hubPro3__btn gbc-hubPro3__btn--primary" href="#">Search by Country</a>
-
-          <a class="gbc-hubPro3__btn gbc-hubPro3__btn--secondary" href="https://www.culturehub.globalbusinessculture.com/pricing">View Pricing</a>
-
-          
         </div>
 
       </div>
@@ -277,10 +266,10 @@ M.yui.loader = {modules: {}};
   }
 
   .gbc-hubPro3__title{
-    margin: 0 0 14px;
-    font-family: "Space Grotesk", "IBM Plex Sans", system-ui, sans-serif;
-    font-size: 34px;
-    line-height: 1.05;
+    margin: 0 0 12px;
+    font-family: "IBM Plex Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-size: 44px;
+    line-height: 1.18;
     font-weight: 700;
     color: var(--gbc-ink);
     letter-spacing: -.02em;
@@ -294,6 +283,11 @@ M.yui.loader = {modules: {}};
     max-width: 68ch;
   }
 
+  .gbc-hubPro3 .gbc-serif{
+    font-family: "IBM Plex Serif", Georgia, "Times New Roman", serif;
+    font-weight: 500;
+  }
+
   .gbc-hubPro3__grid{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -304,6 +298,8 @@ M.yui.loader = {modules: {}};
   .gbc-hubPro3__subCard{
     --gbc-sub-accent: var(--gbc-accent);
     position: relative;
+    display: flex;
+    flex-direction: column;
     border-radius: 16px;
     background: var(--gbc-surface);
     border: 1px solid var(--gbc-border);
@@ -408,6 +404,11 @@ M.yui.loader = {modules: {}};
     color: var(--gbc-accent-strong);
   }
 
+  .gbc-hubPro3__subActions{
+    margin-top: auto;
+    padding-top: 12px;
+  }
+
   .gbc-hubPro3__checks{
     list-style:none;
     margin: 0;
@@ -467,25 +468,25 @@ M.yui.loader = {modules: {}};
     display:inline-flex;
     align-items:center;
     justify-content:center;
-    padding: 12px 22px;
-    border-radius: 999px;
-    font-weight: 600;
-    font-size: 14.5px;
+    padding: 14px 30px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 16px;
     text-decoration:none !important;
     border: 1px solid transparent;
-    transition: transform .15s ease, filter .15s ease, box-shadow .15s ease;
+    transition: .15s ease;
     white-space: nowrap;
   }
 
   .gbc-hubPro3__btn--primary{
-    background: linear-gradient(135deg, var(--gbc-accent) 0%, #2aa7ff 50%, var(--gbc-green) 100%);
-    color: #ffffff !important;
-    box-shadow: 0 14px 28px rgba(27, 107, 216, .28);
+    background: #25b24a;
+    color: #0B2B5B !important;
+    box-shadow: 0 10px 18px rgba(0,0,0,.18);
   }
   .gbc-hubPro3__btn--primary:hover{
     transform: translateY(-1px);
     filter: brightness(1.05);
-    box-shadow: 0 18px 32px rgba(27, 107, 216, .35);
+    box-shadow: 0 12px 20px rgba(0,0,0,.22);
   }
 
   .gbc-hubPro3__btn--secondary{
@@ -513,7 +514,8 @@ M.yui.loader = {modules: {}};
     border-radius: 18px;
     overflow: hidden;
     background: #d9e5f5;
-    min-height: 280px;
+    height: 100%;
+    align-self: stretch;
     box-shadow: 0 18px 36px rgba(7, 24, 45, .18);
     clip-path: polygon(0 0, 100% 0, 100% 82%, 82% 100%, 0 100%);
   }
@@ -561,7 +563,11 @@ M.yui.loader = {modules: {}};
       grid-template-columns: 1fr;
       padding: 28px;
     }
-    .gbc-hubPro3__media{min-height: 240px;}
+    .gbc-hubPro3__title{font-size: 34px;}
+    .gbc-hubPro3__media{
+      height: auto;
+      min-height: 240px;
+    }
     .gbc-hubPro3__grid{grid-template-columns: 1fr;}
     .gbc-hubPro3__subCard--full{grid-column: 1 / -1;}
     .gbc-hubPro3__checks{grid-template-columns: 1fr;}
