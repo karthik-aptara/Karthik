@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html><head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords" content="moodle, ">
+<link rel="stylesheet" type="text/css" href="https://www.culturehub.globalbusinessculture.com/theme/yui_combo.php?rollup/3.18.1/yui-moodlesimple-min.css"><script id="firstthemesheet" type="text/css">/** Required in order to fix style inclusion problems in IE with YUI **/</script><link rel="stylesheet" type="text/css" href="https://www.culturehub.globalbusinessculture.com/theme/styles.php/remui/1770703856_1/all">
+<link rel="stylesheet" type="text/css" href="https://www.culturehub.globalbusinessculture.com/theme/styles.php/remui/1770703856_1/all">
+<script>
+//<![CDATA[
+var M = {}; M.yui = {};
+M.pageloadstarttime = new Date();
+M.cfg = {"wwwroot":"https:\/\/www.culturehub.globalbusinessculture.com","apibase":"https:\/\/www.culturehub.globalbusinessculture.com\/r.php\/api","homeurl":{},"sesskey":"pXUnKrEl3v","sessiontimeout":"7200","sessiontimeoutwarning":"600","themerev":"1770703856","slasharguments":1,"theme":"remui","iconsystemmodule":"core\/icon_system_fontawesome","jsrev":"1770626215","admin":"admin","svgicons":true,"usertimezone":"Europe\/London","language":"en","courseId":1,"courseContextId":2,"contextid":1,"contextInstanceId":0,"langrev":1770698046,"templaterev":"1770626215","siteId":1,"userId":2};var yui1ConfigFn = function(me) {if(/-skin|reset|fonts|grids|base/.test(me.name)){me.type='css';me.path=me.path.replace(/\.js/,'.css');me.path=me.path.replace(/\/yui2-skin/,'/assets/skins/sam/yui2-skin')}};
+var yui2ConfigFn = function(me) {var parts=me.name.replace(/^moodle-/,'').split('-'),component=parts.shift(),module=parts[0],min='-min';if(/-(skin|core)$/.test(me.name)){parts.pop();me.type='css';min=''}
+if(module){var filename=parts.join('-');me.path=component+'/'+module+'/'+filename+min+'.'+me.type}else{me.path=component+'/'+component+'.'+me.type}};
+YUI_config = {"debug":false,"base":"https:\/\/www.culturehub.globalbusinessculture.com\/lib\/yuilib\/3.18.1\/","comboBase":"https:\/\/www.culturehub.globalbusinessculture.com\/theme\/yui_combo.php?","combine":true,"filter":null,"insertBefore":"firstthemesheet","groups":{"yui2":{"base":"https:\/\/www.culturehub.globalbusinessculture.com\/lib\/yuilib\/2in3\/2.9.0\/build\/","comboBase":"https:\/\/www.culturehub.globalbusinessculture.com\/theme\/yui_combo.php?","combine":true,"ext":false,"root":"2in3\/2.9.0\/build\/","patterns":{"yui2-":{"group":"yui2","configFn":yui1ConfigFn}}},"moodle":{"name":"moodle","base":"https:\/\/www.culturehub.globalbusinessculture.com\/theme\/yui_combo.php?m\/1770626215\/","combine":true,"comboBase":"https:\/\/www.culturehub.globalbusinessculture.com\/theme\/yui_combo.php?","ext":false,"root":"m\/1770626215\/","patterns":{"moodle-":{"group":"moodle","configFn":yui2ConfigFn}},"filter":null,"modules":{"moodle-core-actionmenu":{"requires":["base","event","node-event-simulate"]},"moodle-core-event":{"requires":["event-custom"]},"moodle-core-handlebars":{"condition":{"trigger":"handlebars","when":"after"}},"moodle-core-chooserdialogue":{"requires":["base","panel","moodle-core-notification"]},"moodle-core-blocks":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification"]},"moodle-core-dragdrop":{"requires":["base","node","io","dom","dd","event-key","event-focus","moodle-core-notification"]},"moodle-core-maintenancemodetimer":{"requires":["base","node"]},"moodle-core-lockscroll":{"requires":["plugin","base-build"]},"moodle-core-notification":{"requires":["moodle-core-notification-dialogue","moodle-core-notification-alert","moodle-core-notification-confirm","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-core-notification-dialogue":{"requires":["base","node","panel","escape","event-key","dd-plugin","moodle-core-widget-focusafterclose","moodle-core-lockscroll"]},"moodle-core-notification-alert":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-confirm":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-exception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-ajaxexception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core_availability-form":{"requires":["base","node","event","event-delegate","panel","moodle-core-notification-dialogue","json"]},"moodle-course-categoryexpander":{"requires":["node","event-key"]},"moodle-course-management":{"requires":["base","node","io-base","moodle-core-notification-exception","json-parse","dd-constrain","dd-proxy","dd-drop","dd-delegate","node-event-delegate"]},"moodle-course-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-course-coursebase","moodle-course-util"]},"moodle-course-util":{"requires":["node"],"use":["moodle-course-util-base"],"submodules":{"moodle-course-util-base":{},"moodle-course-util-section":{"requires":["node","moodle-course-util-base"]},"moodle-course-util-cm":{"requires":["node","moodle-course-util-base"]}}},"moodle-form-shortforms":{"requires":["node","base","selector-css3","moodle-core-event"]},"moodle-form-dateselector":{"requires":["base","node","overlay","calendar"]},"moodle-question-searchform":{"requires":["base","node"]},"moodle-question-chooser":{"requires":["moodle-core-chooserdialogue"]},"moodle-availability_company-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_completion-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_date-form":{"requires":["base","node","event","io","moodle-core_availability-form"]},"moodle-availability_grade-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_group-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_grouping-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_profile-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_trainingevent-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-mod_assign-history":{"requires":["node","transition"]},"moodle-mod_customcert-rearrange":{"requires":["dd-delegate","dd-drag"]},"moodle-mod_quiz-toolboxes":{"requires":["base","node","event","event-key","io","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-slot","moodle-core-notification-ajaxexception"]},"moodle-mod_quiz-quizbase":{"requires":["base","node"]},"moodle-mod_quiz-autosave":{"requires":["base","node","event","event-valuechange","node-event-delegate","io-form","datatype-date-format"]},"moodle-mod_quiz-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-base","moodle-mod_quiz-util-page","moodle-mod_quiz-util-slot","moodle-course-util"]},"moodle-mod_quiz-util":{"requires":["node","moodle-core-actionmenu"],"use":["moodle-mod_quiz-util-base"],"submodules":{"moodle-mod_quiz-util-base":{},"moodle-mod_quiz-util-slot":{"requires":["node","moodle-mod_quiz-util-base"]},"moodle-mod_quiz-util-page":{"requires":["node","moodle-mod_quiz-util-base"]}}},"moodle-mod_quiz-modform":{"requires":["base","node","event"]},"moodle-mod_quiz-questionchooser":{"requires":["moodle-core-chooserdialogue","moodle-mod_quiz-util","querystring-parse"]},"moodle-message_airnotifier-toolboxes":{"requires":["base","node","io"]},"moodle-report_eventlist-eventfilter":{"requires":["base","event","node","node-event-delegate","datatable","autocomplete","autocomplete-filters"]},"moodle-report_loglive-fetchlogs":{"requires":["base","event","node","io","node-event-delegate"]},"moodle-gradereport_history-userselector":{"requires":["escape","event-delegate","event-key","handlebars","io-base","json-parse","moodle-core-notification-dialogue"]},"moodle-qbank_editquestion-chooser":{"requires":["moodle-core-chooserdialogue"]},"moodle-tool_lp-dragdrop-reorder":{"requires":["moodle-core-dragdrop"]},"moodle-assignfeedback_editpdf-editor":{"requires":["base","event","node","io","graphics","json","event-move","event-resize","transition","querystring-stringify-simple","moodle-core-notification-dialog","moodle-core-notification-alert","moodle-core-notification-warning","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]}}},"gallery":{"name":"gallery","base":"https:\/\/www.culturehub.globalbusinessculture.com\/lib\/yuilib\/gallery\/","combine":true,"comboBase":"https:\/\/www.culturehub.globalbusinessculture.com\/theme\/yui_combo.php?","ext":false,"root":"gallery\/1770626215\/","patterns":{"gallery-":{"group":"gallery"}}}},"modules":{"core_filepicker":{"name":"core_filepicker","fullpath":"https:\/\/www.culturehub.globalbusinessculture.com\/lib\/javascript.php\/1770626215\/repository\/filepicker.js","requires":["base","node","node-event-simulate","json","async-queue","io-base","io-upload-iframe","io-form","yui2-treeview","panel","cookie","datatable","datatable-sort","resize-plugin","dd-plugin","escape","moodle-core_filepicker","moodle-core-notification-dialogue"]},"core_comment":{"name":"core_comment","fullpath":"https:\/\/www.culturehub.globalbusinessculture.com\/lib\/javascript.php\/1770626215\/comment\/comment.js","requires":["base","io-base","node","json","yui2-animation","overlay","escape"]}},"logInclude":[],"logExclude":[],"logLevel":null};
+M.yui.loader = {modules: {}};
+
+//]]>
+</script>
+
+<link href="https://fonts.cdnfonts.com/css/ibm-plex-sans" rel="stylesheet">
+        <style>
+            .block-content[data-editing="true"] .videocomponent-iframe{
+                pointer-events:none
+            }
+        </style>
+        <style type="text/css" id="vvvebjs-styles">.block-content > .gbc-hubPro3 {
+	background-image: url("https://www.culturehub.globalbusinessculture.com/pluginfile.php/1/local_edwiserpagebuilder/media/103781963/Blue%20Abstract%20Background_Digital.png");
+	background-size: cover;
+}
+
+.gbc-hubPro3 > .gbc-hubPro3__container > .gbc-hubPro3__mainCard > .gbc-hubPro3__content > .gbc-hubPro3__actions > .gbc-hubPro3__btn.gbc-hubPro3__btn--primary {
+	font-size: 16px;
+}
+
+.gbc-hubPro3 > .gbc-hubPro3__container > .gbc-hubPro3__mainCard > .gbc-hubPro3__content > .gbc-hubPro3__actions > .gbc-hubPro3__btn.gbc-hubPro3__btn--secondary {
+	font-size: 16px;
+}
+
+.gbc-hubPro3 > .gbc-hubPro3__container > .gbc-hubPro3__mainCard > .gbc-hubPro3__content > .gbc-hubPro3__actions > .gbc-hubPro3__link {
+	font-size: 16px;
+}
+
+</style>
+        <script type="text/javascript" src="https://www.culturehub.globalbusinessculture.com/local/edwiserpagebuilder/js/jquery.min.js"></script>
+        <script type="text/javascript" src="https://www.culturehub.globalbusinessculture.com/local/edwiserpagebuilder/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://www.culturehub.globalbusinessculture.com/local/edwiserpagebuilder/js/slick.min.js"></script>
+        <script type="text/javascript" id="block-script"></script>
+        
+        <link href="https://www.culturehub.globalbusinessculture.com/blocks/edwiseradvancedblock/style.css" rel="stylesheet">
+        <script type="text/javascript">
+            function reloadCarousel() {
+                $('.carousel').carousel();
+                $('.carousel-control-next').on('click', function() {
+                    $('.carousel').carousel("next");
+                });
+                $('.carousel-control-prev').on('click', function() {
+                    $('.carousel').carousel("prev");
+                });
+            }
+            $(document).ready(function(){
+                reloadCarousel();
+            });
+        </script>
+    <link href="https://www.culturehub.globalbusinessculture.com/local/edwiserpagebuilder/libs/aos/aos.css" id="aos-css" rel="stylesheet"><script id="aos-js" type="text/javascript" src="https://www.culturehub.globalbusinessculture.com/local/edwiserpagebuilder/libs/aos/aos.js"></script><script id="aos-init" type="text/javascript">
+		(function() {
+			if (typeof AOS !== 'undefined') {
+				AOS.init({
+					duration: 1000,
+					easing: 'ease-in-out',
+					once: false,
+					mirror: false
+				});
+			}
+		})();
+	</script><noscript><style type="text/css">[data-aos] { opacity: 1 !important; transform: translate(0) scale(1) !important; }</style></noscript></head>
+    <body class="block-content" data-editing="true" data-aos-easing="ease-in-out" data-aos-duration="1000" data-aos-delay="0">
+        
+        
+        
+        
+        
+        
+        
+        <section class="gbc-hubPro3" aria-label="Culture Hub">
+  <div class="gbc-hubPro3__container">
+
+    <article class="gbc-hubPro3__mainCard">
+      <div class="gbc-hubPro3__content">
+
+        <p class="gbc-hubPro3__eyebrow">Culture Hub</p>
+        <h2 class="gbc-hubPro3__title">Cultural awareness training for global teams</h2>
+
+        <p class="gbc-hubPro3__lead">
+          Culture Hub provides practical cultural awareness eLearning and country business culture courses designed for organizations working across borders. The learning focuses on real workplace situations so teams can communicate clearly, collaborate effectively, and avoid common misunderstandings.
+        </p>
+
+        <div class="gbc-hubPro3__grid" aria-label="Culture Hub sections">
+
+          <section class="gbc-hubPro3__subCard gbc-hubPro3__subCard--start" aria-label="Start with global teams">
+            <h3 class="gbc-hubPro3__subTitle">Start with global teams</h3>
+            <p class="gbc-hubPro3__subDesc">
+              Build core skills for working across cultures, communication styles, and business environments.
+            </p>
+
+            <a class="gbc-hubPro3__rowLink" href="/local/edwiserpagebuilder/page.php?id=12">
+              <span class="gbc-hubPro3__rowText">Succeeding in a Global Team</span>
+              <span class="gbc-hubPro3__rowChevron" aria-hidden="true">›</span>
+            </a>
+          </section>
+
+          <section class="gbc-hubPro3__subCard gbc-hubPro3__subCard--explore" aria-label="Explore country business culture">
+            <h3 class="gbc-hubPro3__subTitle">Explore country business culture</h3>
+            <p class="gbc-hubPro3__subDesc">
+              Find courses that help teams work effectively with colleagues, clients, and partners in specific countries.
+            </p>
+
+            <div class="gbc-hubPro3__chips" aria-label="Countries">
+              <span class="gbc-hubPro3__chip">Japan</span>
+              <span class="gbc-hubPro3__chip">India</span>
+              <span class="gbc-hubPro3__chip">USA</span>
+              <span class="gbc-hubPro3__chip">UK</span>
+              <span class="gbc-hubPro3__chip">Germany</span>
+              <span class="gbc-hubPro3__chip">UAE</span>
+              <span class="gbc-hubPro3__chip">Philippines</span>
+              <span class="gbc-hubPro3__chip gbc-hubPro3__chip--more">and more</span>
+            </div>
+          </section>
+
+          <section class="gbc-hubPro3__subCard gbc-hubPro3__subCard--work gbc-hubPro3__subCard--full" aria-label="Built for real work">
+            <h3 class="gbc-hubPro3__subTitle">Built for real work</h3>
+            <p class="gbc-hubPro3__subDesc">
+              Each course combines structured learning with practical tools teams can use immediately.
+            </p>
+
+            <ul class="gbc-hubPro3__checks" aria-label="Included items">
+              <li class="gbc-hubPro3__check gbc-hubPro3__check--module">
+                <span class="gbc-hubPro3__pill" aria-hidden="true"></span>
+                Short eLearning modules
+              </li>
+              <li class="gbc-hubPro3__check gbc-hubPro3__check--scenario">
+                <span class="gbc-hubPro3__pill" aria-hidden="true"></span>
+                Scenario-based knowledge checks
+              </li>
+              <li class="gbc-hubPro3__check gbc-hubPro3__check--guide">
+                <span class="gbc-hubPro3__pill" aria-hidden="true"></span>
+                Essential quick-reference guides
+              </li>
+              <li class="gbc-hubPro3__check gbc-hubPro3__check--assistant">
+                <span class="gbc-hubPro3__pill" aria-hidden="true"></span>
+                Culture Assistant for everyday questions
+              </li>
+            </ul>
+          </section>
+
+        </div>
+
+        <!-- CTAs (updated per request)
+             - Browse courses button styled like the "first section" CTA:
+               green + darker text + subtle shadow + simple hover
+             - Removed icons from the other CTA buttons
+        -->
+        <div class="gbc-hubPro3__actions" aria-label="Actions">
+          <a class="gbc-hubPro3__btn gbc-hubPro3__btn--primary" href="#">Search by Country</a>
+
+          <a class="gbc-hubPro3__btn gbc-hubPro3__btn--secondary" href="https://www.culturehub.globalbusinessculture.com/pricing">View Pricing</a>
+
+          
+        </div>
+
+      </div>
+
+      <div class="gbc-hubPro3__media" aria-hidden="true">
+        <img class="gbc-hubPro3__img" src="https://www.culturehub.globalbusinessculture.com/pluginfile.php/1/local_edwiserpagebuilder/media/72373848/World%20Flags.jpg" loading="lazy">
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<style>
+  .gbc-hubPro3{
+    --gbc-ink: #0b1b2b;
+    --gbc-muted: #42566b;
+    --gbc-accent: #1b6bd8;
+    --gbc-accent-strong: #0f4fb0;
+    --gbc-green: #18a35a;
+    --gbc-surface: #ffffff;
+    --gbc-soft: #f1f4f8;
+    --gbc-border: rgba(11, 27, 43, .12);
+    --gbc-shadow: 0 28px 60px rgba(7, 24, 45, .18);
+    --gbc-radius: 22px;
+    --gbc-bg-image: url("https://www.culturehub.globalbusinessculture.com/pluginfile.php/1/local_edwiserpagebuilder/media/103781963/Blue%20Abstract%20Background_Digital.png");
+
+    font-family: "IBM Plex Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    padding: 48px 24px;
+    background-color: transparent;
+
+    position: relative;
+    isolation: isolate;
+
+    /* Provision for REMUI background image */
+    background-image: var(--gbc-bg-image, none);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .gbc-hubPro3::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background: transparent;
+    z-index:0;
+  }
+  .gbc-hubPro3::after{
+    content:"";
+    position:absolute;
+    width: 520px;
+    height: 520px;
+    right: 6%;
+    top: -140px;
+    border-radius: 50% 40% 60% 45%;
+    background: radial-gradient(circle at 30% 30%, rgba(27,107,216,.18), rgba(24,163,90,.08) 55%, rgba(27,107,216,0) 70%);
+    transform: rotate(-12deg);
+    z-index:0;
+    pointer-events: none;
+  }
+
+  .gbc-hubPro3__container{
+    max-width:1280px;
+    margin:0 auto;
+    position: relative;
+    z-index:1;
+  }
+
+  .gbc-hubPro3__mainCard{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.15fr .85fr;
+    gap: 28px;
+
+    padding: 28px;
+    border-radius: var(--gbc-radius);
+    background: rgba(255,255,255,.96);
+    border: 1px solid var(--gbc-border);
+    box-shadow: var(--gbc-shadow);
+    overflow: hidden;
+  }
+  .gbc-hubPro3__mainCard::before{
+    content:"";
+    position:absolute;
+    inset: 0 0 auto 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--gbc-accent) 0%, #4cb6ff 45%, var(--gbc-green) 100%);
+  }
+  .gbc-hubPro3__mainCard::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background: radial-gradient(circle at 12% 8%, rgba(27,107,216,.16), rgba(27,107,216,0) 45%);
+    pointer-events: none;
+  }
+
+  .gbc-hubPro3__content{padding-right: 6px;}
+
+  .gbc-hubPro3__eyebrow{
+    margin: 0 0 8px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--gbc-accent-strong);
+  }
+
+  .gbc-hubPro3__title{
+    margin: 0 0 14px;
+    font-family: "Space Grotesk", "IBM Plex Sans", system-ui, sans-serif;
+    font-size: 34px;
+    line-height: 1.05;
+    font-weight: 700;
+    color: var(--gbc-ink);
+    letter-spacing: -.02em;
+  }
+
+  .gbc-hubPro3__lead{
+    margin: 0 0 16px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--gbc-muted);
+    max-width: 68ch;
+  }
+
+  .gbc-hubPro3__grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 12px 0 18px;
+  }
+
+  .gbc-hubPro3__subCard{
+    --gbc-sub-accent: var(--gbc-accent);
+    position: relative;
+    border-radius: 16px;
+    background: var(--gbc-surface);
+    border: 1px solid var(--gbc-border);
+    box-shadow: 0 16px 32px rgba(7, 24, 45, .08);
+    padding: 18px 18px 16px;
+    overflow: hidden;
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .gbc-hubPro3__subCard:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 20px 40px rgba(7, 24, 45, .12);
+    border-color: rgba(11, 27, 43, .2);
+  }
+  .gbc-hubPro3__subCard::before{
+    content:"";
+    position:absolute;
+    inset: 0 0 auto 0;
+    height: 4px;
+    background: var(--gbc-sub-accent);
+  }
+
+  .gbc-hubPro3__subCard--start{--gbc-sub-accent:#1b6bd8;}
+  .gbc-hubPro3__subCard--explore{--gbc-sub-accent:#2aa7ff;}
+  .gbc-hubPro3__subCard--work{--gbc-sub-accent:#18a35a;}
+
+  .gbc-hubPro3__subTitle{
+    margin: 4px 0 6px;
+    font-family: "IBM Plex Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--gbc-ink);
+  }
+
+  .gbc-hubPro3__subDesc{
+    margin: 0 0 12px;
+    font-size: 13.8px;
+    line-height: 1.6;
+    color: var(--gbc-muted);
+  }
+
+  .gbc-hubPro3__subCard--full{
+    grid-column: 1 / -1;
+    padding: 18px 18px 20px;
+  }
+
+  .gbc-hubPro3__rowLink{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+
+    padding: 12px 14px;
+
+    border-radius: 12px;
+    background: var(--gbc-soft);
+    border: 1px solid transparent;
+
+    text-decoration: none !important;
+    transition: transform .15s ease, background .15s ease, border-color .15s ease;
+  }
+  .gbc-hubPro3__rowLink:hover{
+    transform: translateY(-1px);
+    background: #e8eff8;
+    border-color: rgba(27, 107, 216, .2);
+  }
+  .gbc-hubPro3__rowText{
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--gbc-ink);
+    text-decoration: none;
+    transition: color .15s ease, text-decoration-color .15s ease;
+  }
+  .gbc-hubPro3__rowLink:hover .gbc-hubPro3__rowText{
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .gbc-hubPro3__rowChevron{
+    font-size: 20px;
+    font-weight: 700;
+    color: rgba(27, 107, 216, .7);
+    line-height: 1;
+  }
+
+  .gbc-hubPro3__chips{
+    display:flex;
+    flex-wrap:wrap;
+    gap: 10px;
+  }
+  .gbc-hubPro3__chip{
+    display:inline-flex;
+    align-items:center;
+    padding: 5px 10px;
+    border-radius: 999px;
+    background: var(--gbc-soft);
+    border: 1px solid rgba(11,27,43,.08);
+    color: var(--gbc-ink);
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .gbc-hubPro3__chip--more{
+    background: rgba(27,107,216,.1);
+    border-color: rgba(27,107,216,.18);
+    color: var(--gbc-accent-strong);
+  }
+
+  .gbc-hubPro3__checks{
+    list-style:none;
+    margin: 0;
+    padding: 0;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 14px;
+  }
+  .gbc-hubPro3__check{
+    position: relative;
+    display:flex;
+    align-items:flex-start;
+    gap: 12px;
+    font-size: 13.8px;
+    line-height: 1.55;
+    font-weight: 600;
+    color: var(--gbc-muted);
+  }
+  .gbc-hubPro3__check--module{--pill-color: 27, 107, 216;}
+  .gbc-hubPro3__check--scenario{--pill-color: 42, 167, 255;}
+  .gbc-hubPro3__check--guide{--pill-color: 24, 163, 90;}
+  .gbc-hubPro3__check--assistant{--pill-color: 123, 106, 255;}
+
+  .gbc-hubPro3__pill{
+    position: relative;
+    width: 22px;
+    height: 22px;
+    border-radius: 999px;
+    flex: 0 0 22px;
+    background: rgba(var(--pill-color), .16);
+    border: 1px solid rgba(var(--pill-color), .35);
+    box-shadow: 0 8px 16px rgba(7, 24, 45, .12);
+  }
+  .gbc-hubPro3__pill::before{
+    content:"";
+    position:absolute;
+    left: 50%;
+    top: 50%;
+    width: 4px;
+    height: 4px;
+    border-radius: 999px;
+    background: rgba(var(--pill-color), .95);
+    transform: translate(-50%, -50%);
+  }
+
+  .gbc-hubPro3__actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap: 12px;
+    align-items:center;
+    padding-top: 14px;
+    border-top: 1px solid rgba(11, 27, 43, .08);
+  }
+
+  .gbc-hubPro3__btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding: 12px 22px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 14.5px;
+    text-decoration:none !important;
+    border: 1px solid transparent;
+    transition: transform .15s ease, filter .15s ease, box-shadow .15s ease;
+    white-space: nowrap;
+  }
+
+  .gbc-hubPro3__btn--primary{
+    background: linear-gradient(135deg, var(--gbc-accent) 0%, #2aa7ff 50%, var(--gbc-green) 100%);
+    color: #ffffff !important;
+    box-shadow: 0 14px 28px rgba(27, 107, 216, .28);
+  }
+  .gbc-hubPro3__btn--primary:hover{
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+    box-shadow: 0 18px 32px rgba(27, 107, 216, .35);
+  }
+
+  .gbc-hubPro3__btn--secondary{
+    background: #ffffff;
+    color: var(--gbc-accent-strong) !important;
+    border-color: rgba(27, 107, 216, .2);
+    box-shadow: 0 10px 20px rgba(7, 24, 45, .1);
+  }
+  .gbc-hubPro3__btn--secondary:hover{
+    transform: translateY(-1px);
+    filter: brightness(1.02);
+    box-shadow: 0 14px 24px rgba(7, 24, 45, .14);
+  }
+
+  .gbc-hubPro3__link{
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--gbc-accent-strong) !important;
+    text-decoration: underline;
+    padding: 8px 6px;
+  }
+
+  .gbc-hubPro3__media{
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #d9e5f5;
+    min-height: 280px;
+    box-shadow: 0 18px 36px rgba(7, 24, 45, .18);
+    clip-path: polygon(0 0, 100% 0, 100% 82%, 82% 100%, 0 100%);
+  }
+  .gbc-hubPro3__media::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background: linear-gradient(180deg, rgba(7, 24, 45, 0) 0%, rgba(7, 24, 45, .18) 100%);
+    pointer-events: none;
+  }
+  .gbc-hubPro3__img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transform: scale(1.02);
+    filter: saturate(1.05) contrast(1.02);
+  }
+
+  @keyframes gbcFadeUp{
+    from{opacity:0;transform:translateY(14px);}
+    to{opacity:1;transform:translateY(0);}
+  }
+
+  .gbc-hubPro3__mainCard{
+    animation: gbcFadeUp .6s ease-out both;
+  }
+  .gbc-hubPro3__subCard{
+    animation: gbcFadeUp .6s ease-out both;
+  }
+  .gbc-hubPro3__subCard:nth-child(1){animation-delay: .08s;}
+  .gbc-hubPro3__subCard:nth-child(2){animation-delay: .14s;}
+  .gbc-hubPro3__subCard:nth-child(3){animation-delay: .2s;}
+
+  @media (prefers-reduced-motion: reduce){
+    .gbc-hubPro3__mainCard,
+    .gbc-hubPro3__subCard{
+      animation: none;
+      transition: none;
+    }
+  }
+
+  @media (max-width: 980px){
+    .gbc-hubPro3{padding: 56px 20px;}
+    .gbc-hubPro3__mainCard{
+      grid-template-columns: 1fr;
+      padding: 28px;
+    }
+    .gbc-hubPro3__media{min-height: 240px;}
+    .gbc-hubPro3__grid{grid-template-columns: 1fr;}
+    .gbc-hubPro3__subCard--full{grid-column: 1 / -1;}
+    .gbc-hubPro3__checks{grid-template-columns: 1fr;}
+  }
+
+  @media (max-width: 680px){
+    .gbc-hubPro3__title{font-size: 30px;}
+    .gbc-hubPro3__lead{font-size: 15.5px;}
+    .gbc-hubPro3__btn{width: 100%;}
+    .gbc-hubPro3__actions{align-items: stretch;}
+  }
+</style>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</body></html>

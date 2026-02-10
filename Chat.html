@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html><head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords" content="moodle, ">
+<link rel="stylesheet" type="text/css" href="https://www.culturehub.globalbusinessculture.com/theme/yui_combo.php?rollup/3.18.1/yui-moodlesimple-min.css"><script id="firstthemesheet" type="text/css">/** Required in order to fix style inclusion problems in IE with YUI **/</script><link rel="stylesheet" type="text/css" href="https://www.culturehub.globalbusinessculture.com/theme/styles.php/remui/1770703856_1/all">
+<link rel="stylesheet" type="text/css" href="https://www.culturehub.globalbusinessculture.com/theme/styles.php/remui/1770703856_1/all">
+<script>
+//<![CDATA[
+var M = {}; M.yui = {};
+M.pageloadstarttime = new Date();
+M.cfg = {"wwwroot":"https:\/\/www.culturehub.globalbusinessculture.com","apibase":"https:\/\/www.culturehub.globalbusinessculture.com\/r.php\/api","homeurl":{},"sesskey":"pXUnKrEl3v","sessiontimeout":"7200","sessiontimeoutwarning":"600","themerev":"1770703856","slasharguments":1,"theme":"remui","iconsystemmodule":"core\/icon_system_fontawesome","jsrev":"1770626215","admin":"admin","svgicons":true,"usertimezone":"Europe\/London","language":"en","courseId":1,"courseContextId":2,"contextid":1,"contextInstanceId":0,"langrev":1770698046,"templaterev":"1770626215","siteId":1,"userId":2};var yui1ConfigFn = function(me) {if(/-skin|reset|fonts|grids|base/.test(me.name)){me.type='css';me.path=me.path.replace(/\.js/,'.css');me.path=me.path.replace(/\/yui2-skin/,'/assets/skins/sam/yui2-skin')}};
+var yui2ConfigFn = function(me) {var parts=me.name.replace(/^moodle-/,'').split('-'),component=parts.shift(),module=parts[0],min='-min';if(/-(skin|core)$/.test(me.name)){parts.pop();me.type='css';min=''}
+if(module){var filename=parts.join('-');me.path=component+'/'+module+'/'+filename+min+'.'+me.type}else{me.path=component+'/'+component+'.'+me.type}};
+YUI_config = {"debug":false,"base":"https:\/\/www.culturehub.globalbusinessculture.com\/lib\/yuilib\/3.18.1\/","comboBase":"https:\/\/www.culturehub.globalbusinessculture.com\/theme\/yui_combo.php?","combine":true,"filter":null,"insertBefore":"firstthemesheet","groups":{"yui2":{"base":"https:\/\/www.culturehub.globalbusinessculture.com\/lib\/yuilib\/2in3\/2.9.0\/build\/","comboBase":"https:\/\/www.culturehub.globalbusinessculture.com\/theme\/yui_combo.php?","combine":true,"ext":false,"root":"2in3\/2.9.0\/build\/","patterns":{"yui2-":{"group":"yui2","configFn":yui1ConfigFn}}},"moodle":{"name":"moodle","base":"https:\/\/www.culturehub.globalbusinessculture.com\/theme\/yui_combo.php?m\/1770626215\/","combine":true,"comboBase":"https:\/\/www.culturehub.globalbusinessculture.com\/theme\/yui_combo.php?","ext":false,"root":"m\/1770626215\/","patterns":{"moodle-":{"group":"moodle","configFn":yui2ConfigFn}},"filter":null,"modules":{"moodle-core-actionmenu":{"requires":["base","event","node-event-simulate"]},"moodle-core-event":{"requires":["event-custom"]},"moodle-core-handlebars":{"condition":{"trigger":"handlebars","when":"after"}},"moodle-core-chooserdialogue":{"requires":["base","panel","moodle-core-notification"]},"moodle-core-blocks":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification"]},"moodle-core-dragdrop":{"requires":["base","node","io","dom","dd","event-key","event-focus","moodle-core-notification"]},"moodle-core-maintenancemodetimer":{"requires":["base","node"]},"moodle-core-lockscroll":{"requires":["plugin","base-build"]},"moodle-core-notification":{"requires":["moodle-core-notification-dialogue","moodle-core-notification-alert","moodle-core-notification-confirm","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-core-notification-dialogue":{"requires":["base","node","panel","escape","event-key","dd-plugin","moodle-core-widget-focusafterclose","moodle-core-lockscroll"]},"moodle-core-notification-alert":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-confirm":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-exception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-ajaxexception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core_availability-form":{"requires":["base","node","event","event-delegate","panel","moodle-core-notification-dialogue","json"]},"moodle-course-categoryexpander":{"requires":["node","event-key"]},"moodle-course-management":{"requires":["base","node","io-base","moodle-core-notification-exception","json-parse","dd-constrain","dd-proxy","dd-drop","dd-delegate","node-event-delegate"]},"moodle-course-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-course-coursebase","moodle-course-util"]},"moodle-course-util":{"requires":["node"],"use":["moodle-course-util-base"],"submodules":{"moodle-course-util-base":{},"moodle-course-util-section":{"requires":["node","moodle-course-util-base"]},"moodle-course-util-cm":{"requires":["node","moodle-course-util-base"]}}},"moodle-form-shortforms":{"requires":["node","base","selector-css3","moodle-core-event"]},"moodle-form-dateselector":{"requires":["base","node","overlay","calendar"]},"moodle-question-searchform":{"requires":["base","node"]},"moodle-question-chooser":{"requires":["moodle-core-chooserdialogue"]},"moodle-availability_company-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_completion-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_date-form":{"requires":["base","node","event","io","moodle-core_availability-form"]},"moodle-availability_grade-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_group-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_grouping-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_profile-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_trainingevent-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-mod_assign-history":{"requires":["node","transition"]},"moodle-mod_customcert-rearrange":{"requires":["dd-delegate","dd-drag"]},"moodle-mod_quiz-toolboxes":{"requires":["base","node","event","event-key","io","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-slot","moodle-core-notification-ajaxexception"]},"moodle-mod_quiz-quizbase":{"requires":["base","node"]},"moodle-mod_quiz-autosave":{"requires":["base","node","event","event-valuechange","node-event-delegate","io-form","datatype-date-format"]},"moodle-mod_quiz-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-base","moodle-mod_quiz-util-page","moodle-mod_quiz-util-slot","moodle-course-util"]},"moodle-mod_quiz-util":{"requires":["node","moodle-core-actionmenu"],"use":["moodle-mod_quiz-util-base"],"submodules":{"moodle-mod_quiz-util-base":{},"moodle-mod_quiz-util-slot":{"requires":["node","moodle-mod_quiz-util-base"]},"moodle-mod_quiz-util-page":{"requires":["node","moodle-mod_quiz-util-base"]}}},"moodle-mod_quiz-modform":{"requires":["base","node","event"]},"moodle-mod_quiz-questionchooser":{"requires":["moodle-core-chooserdialogue","moodle-mod_quiz-util","querystring-parse"]},"moodle-message_airnotifier-toolboxes":{"requires":["base","node","io"]},"moodle-report_eventlist-eventfilter":{"requires":["base","event","node","node-event-delegate","datatable","autocomplete","autocomplete-filters"]},"moodle-report_loglive-fetchlogs":{"requires":["base","event","node","io","node-event-delegate"]},"moodle-gradereport_history-userselector":{"requires":["escape","event-delegate","event-key","handlebars","io-base","json-parse","moodle-core-notification-dialogue"]},"moodle-qbank_editquestion-chooser":{"requires":["moodle-core-chooserdialogue"]},"moodle-tool_lp-dragdrop-reorder":{"requires":["moodle-core-dragdrop"]},"moodle-assignfeedback_editpdf-editor":{"requires":["base","event","node","io","graphics","json","event-move","event-resize","transition","querystring-stringify-simple","moodle-core-notification-dialog","moodle-core-notification-alert","moodle-core-notification-warning","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]}}},"gallery":{"name":"gallery","base":"https:\/\/www.culturehub.globalbusinessculture.com\/lib\/yuilib\/gallery\/","combine":true,"comboBase":"https:\/\/www.culturehub.globalbusinessculture.com\/theme\/yui_combo.php?","ext":false,"root":"gallery\/1770626215\/","patterns":{"gallery-":{"group":"gallery"}}}},"modules":{"core_filepicker":{"name":"core_filepicker","fullpath":"https:\/\/www.culturehub.globalbusinessculture.com\/lib\/javascript.php\/1770626215\/repository\/filepicker.js","requires":["base","node","node-event-simulate","json","async-queue","io-base","io-upload-iframe","io-form","yui2-treeview","panel","cookie","datatable","datatable-sort","resize-plugin","dd-plugin","escape","moodle-core_filepicker","moodle-core-notification-dialogue"]},"core_comment":{"name":"core_comment","fullpath":"https:\/\/www.culturehub.globalbusinessculture.com\/lib\/javascript.php\/1770626215\/comment\/comment.js","requires":["base","io-base","node","json","yui2-animation","overlay","escape"]}},"logInclude":[],"logExclude":[],"logLevel":null};
+M.yui.loader = {modules: {}};
+
+//]]>
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+        <style>
+            .block-content[data-editing="true"] .videocomponent-iframe{
+                pointer-events:none
+            }
+        </style>
+        
+        <script type="text/javascript" src="https://www.culturehub.globalbusinessculture.com/local/edwiserpagebuilder/js/jquery.min.js"></script>
+        <script type="text/javascript" src="https://www.culturehub.globalbusinessculture.com/local/edwiserpagebuilder/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://www.culturehub.globalbusinessculture.com/local/edwiserpagebuilder/js/slick.min.js"></script>
+        <script type="text/javascript" id="block-script"></script>
+        
+        <link href="https://www.culturehub.globalbusinessculture.com/blocks/edwiseradvancedblock/style.css" rel="stylesheet">
+        <script type="text/javascript">
+            function reloadCarousel() {
+                $('.carousel').carousel();
+                $('.carousel-control-next').on('click', function() {
+                    $('.carousel').carousel("next");
+                });
+                $('.carousel-control-prev').on('click', function() {
+                    $('.carousel').carousel("prev");
+                });
+            }
+            $(document).ready(function(){
+                reloadCarousel();
+            });
+        </script>
+    <style id="vvvebjs-styles"></style><link href="https://www.culturehub.globalbusinessculture.com/local/edwiserpagebuilder/libs/aos/aos.css" id="aos-css" rel="stylesheet"><script id="aos-js" type="text/javascript" src="https://www.culturehub.globalbusinessculture.com/local/edwiserpagebuilder/libs/aos/aos.js"></script><script id="aos-init" type="text/javascript">
+		(function() {
+			if (typeof AOS !== 'undefined') {
+				AOS.init({
+					duration: 1000,
+					easing: 'ease-in-out',
+					once: false,
+					mirror: false
+				});
+			}
+		})();
+	</script><noscript><style type="text/css">[data-aos] { opacity: 1 !important; transform: translate(0) scale(1) !important; }</style></noscript></head>
+    <body class="block-content" data-editing="true" data-aos-easing="ease-in-out" data-aos-duration="1000" data-aos-delay="0">
+        
+        
+
+<section class="gbc-inline-cta" aria-label="Culture Assistant call to action">
+  <div class="gbc-inline-cta__inner">
+
+    <!-- Badge -->
+    <div class="gbc-inline-cta__badge" aria-hidden="true">
+      <img class="gbc-inline-cta__icon" src="https://www.culturehub.globalbusinessculture.com/pluginfile.php/1/local_edwiserpagebuilder/media/466546985/chatbot.svg" alt="" loading="lazy">
+    </div>
+
+    <!-- Text -->
+    <div class="gbc-inline-cta__content">
+      <p class="gbc-inline-cta__kicker">Culture Assistant (AI)</p>
+
+      <h3 class="gbc-inline-cta__title">
+        Get instant guidance for working across cultures
+      </h3>
+
+      <p class="gbc-inline-cta__desc">
+        Ask about communication styles, hierarchy, meeting etiquette, decision-making,
+        and workplace expectations — tailored to the country you’re working with.
+      </p>
+    </div>
+
+    <!-- CTA -->
+    <div class="gbc-inline-cta__actions">
+      <a class="gbc-inline-cta__btn" href="/local/edwiserpagebuilder/page.php?id=6">
+        Launch Chat <span class="gbc-inline-cta__arrow" aria-hidden="true">→</span>
+      </a>
+      
+    </div>
+
+  </div>
+</section>
+
+<style>
+/* =========================================================
+   GBC Inline CTA – Make it stand out (premium panel)
+========================================================= */
+.gbc-inline-cta{
+  --cta-ink: #0b1b2b;
+  --cta-muted: #42566b;
+  --cta-accent: #1b6bd8;
+  --cta-accent-strong: #0f4fb0;
+  --cta-green: #18a35a;
+  --cta-border: rgba(11, 27, 43, .12);
+  --cta-shadow: 0 28px 60px rgba(7, 24, 45, .18);
+
+  font-family:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  padding: 48px 24px;
+  background-color: transparent;
+
+  position: relative;
+  isolation: isolate;
+
+  background-image: var(--cta-bg-image, none);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+  .gbc-inline-cta::after{
+    content:"";
+    position:absolute;
+    width: 520px;
+    height: 520px;
+    right: 6%;
+    top: -140px;
+    border-radius: 50% 40% 60% 45%;
+    background: radial-gradient(circle at 30% 30%, rgba(27,107,216,.18), rgba(24,163,90,.08) 55%, rgba(27,107,216,0) 70%);
+    transform: rotate(-12deg);
+    z-index:0;
+    pointer-events: none;
+  }
+
+/* The standout card */
+.gbc-inline-cta__inner{
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 28px;
+  border-radius: 22px;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 24px;
+
+  background: rgba(255,255,255,.96);
+  border: 1px solid var(--cta-border);
+  box-shadow: var(--cta-shadow);
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+  .gbc-inline-cta__inner:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 32px 64px rgba(7, 24, 45, .22);
+  }
+
+/* Glow + subtle brand accents */
+.gbc-inline-cta__inner::before{
+  content:"";
+  position:absolute;
+  inset: 0 0 auto 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--cta-accent) 0%, #4cb6ff 45%, var(--cta-green) 100%);
+  pointer-events:none;
+}
+
+.gbc-inline-cta__inner::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: radial-gradient(circle at 12% 8%, rgba(27,107,216,.16), rgba(27,107,216,0) 45%);
+  pointer-events:none;
+}
+
+/* Badge */
+.gbc-inline-cta__badge{
+  width: 64px;
+  height: 64px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,.55), rgba(255,255,255,0) 60%),
+    linear-gradient(135deg, #2aa7ff 0%, #1b6bd8 45%, #18a35a 100%);
+
+  box-shadow:
+    0 12px 22px rgba(7, 24, 45, .18),
+    inset 0 1px 2px rgba(255,255,255,.4);
+
+  position: relative;
+  z-index: 1;
+}
+
+.gbc-inline-cta__icon{
+  width: 26px;
+  height: 26px;
+  display: block;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+/* Text */
+.gbc-inline-cta__content{
+  min-width: 240px;
+  position: relative;
+  z-index: 1;
+}
+
+.gbc-inline-cta__kicker{
+  margin: 0 0 6px 0;
+  font-size: 11px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--cta-accent-strong);
+  font-family: "Space Grotesk", "IBM Plex Sans", system-ui, sans-serif;
+}
+
+.gbc-inline-cta__title{
+  margin: 0 0 8px 0;
+  font-size: 22px;
+  line-height: 1.25;
+  font-weight: 700;
+  color: var(--cta-ink);
+  font-family: "Space Grotesk", "IBM Plex Sans", system-ui, sans-serif;
+}
+
+.gbc-inline-cta__desc{
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--cta-muted);
+}
+
+/* CTA area */
+.gbc-inline-cta__actions{
+  display: grid;
+  gap: 8px;
+  align-items: start;
+  justify-items: end;
+  position: relative;
+  z-index: 1;
+}
+
+/* Button: more contrast + more presence */
+.gbc-inline-cta__btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 12px 22px;
+  border-radius: 999px;
+
+  background: linear-gradient(135deg, var(--cta-accent) 0%, #2aa7ff 50%, var(--cta-green) 100%);
+  color: #ffffff !important;
+
+  font-weight: 600;
+  font-size: 14.5px;
+  text-decoration: none !important;
+
+  box-shadow: 0 14px 28px rgba(27, 107, 216, .28);
+  transition: transform .15s ease, filter .15s ease, box-shadow .15s ease;
+  white-space: nowrap;
+}
+
+.gbc-inline-cta__arrow{
+  display:inline-block;
+  transform: translateY(1px);
+}
+
+.gbc-inline-cta__btn:hover{
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+  box-shadow: 0 18px 32px rgba(27, 107, 216, .35);
+}
+
+.gbc-inline-cta__note{
+  margin: 0;
+  font-size: 12px;
+  color: var(--cta-muted);
+}
+
+/* Responsive */
+@media (max-width: 920px){
+  .gbc-inline-cta__inner{
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "badge content"
+      "btn   btn";
+    gap: 14px;
+  }
+
+  .gbc-inline-cta__badge{ grid-area: badge; }
+  .gbc-inline-cta__content{ grid-area: content; }
+  .gbc-inline-cta__actions{
+    grid-area: btn;
+    width: 100%;
+    justify-items: stretch;
+  }
+
+  .gbc-inline-cta__btn{
+    width: 100%;
+    justify-content: center;
+  }
+
+  .gbc-inline-cta__note{
+    text-align: center;
+  }
+}
+
+@media (max-width: 520px){
+  .gbc-inline-cta{ padding: 28px 16px; }
+  .gbc-inline-cta__inner{ padding: 18px 16px; }
+  .gbc-inline-cta__title{ font-size: 18px; }
+}
+</style>
+
+
+    
+
+    
+</body></html>
