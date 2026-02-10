@@ -25,11 +25,7 @@ M.yui.loader = {modules: {}};
                 pointer-events:none
             }
         </style>
-        <style type="text/css" id="vvvebjs-styles">
-  #gbc-hero > .gbc-hero__container > .gbc-hero__left > h1 { color: rgb(255, 255, 255); font-size: 51.68px; font-weight: 600; font-family: "IBM Plex Sans"; }
-  #gbc-hero > .gbc-hero-svg.gbc-hero-svg--tr { top: 0px; left: 1678px; right: 0px; }
-  #gbc-hero > .gbc-hero-svg.gbc-hero-svg--bl { bottom: -4px; }
-</style>
+        <style type="text/css" id="vvvebjs-styles"></style>
         <script type="text/javascript" src="https://www.culturehub.globalbusinessculture.com/local/edwiserpagebuilder/js/jquery.min.js"></script>
         <script type="text/javascript" src="https://www.culturehub.globalbusinessculture.com/local/edwiserpagebuilder/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="https://www.culturehub.globalbusinessculture.com/local/edwiserpagebuilder/js/slick.min.js"></script>
@@ -61,15 +57,10 @@ M.yui.loader = {modules: {}};
 				});
 			}
 		})();
-	</script><noscript><style type="text/css">[data-aos] { opacity: 1 !important; transform: translate(0) scale(1) !important; }</style></noscript></head>
-    <body class="block-content" data-editing="true" data-aos-easing="ease-in-out" data-aos-duration="1000" data-aos-delay="0">
-        
-        
-
-<!-- ========================= HERO SECTION – Culture Hub Paste-ready | Moodle-safe ========================= -->
+	</script><noscript><style type="text/css">[data-aos] { opacity: 1 !important; transform: translate(0) scale(1) !important; }</style></noscript>
 <style>
 /* =========================== HERO BASE =========================== */
-#gbc-hero{
+.gbc-hero{
   width:100%;
   position:relative;
   overflow:hidden;
@@ -80,8 +71,8 @@ M.yui.loader = {modules: {}};
     radial-gradient(800px 520px at 85% 70%, rgba(246,162,26,.14), transparent 58%),
     radial-gradient(900px 520px at 55% 55%, rgba(53,193,106,.09), transparent 60%),
     linear-gradient(120deg, #003367, #004A93, #0B2B5B, #0E5AA8, #003367);
-  background-size: 160% 160%, 170% 170%, 180% 180%, 260% 260%;
-  animation: gbcHeroGradient 18s ease-in-out infinite !important;
+  background-size: 140% 140%, 150% 150%, 160% 160%, 220% 220%;
+  animation: gbcHeroGradient 24s ease-in-out infinite !important;
 
   color:#ffffff;
   font-family:"IBM Plex Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -89,50 +80,50 @@ M.yui.loader = {modules: {}};
 }
 
 @keyframes gbcHeroGradient{
-  0%   { background-position: 0% 50%, 100% 45%, 60% 60%, 0% 50%; }
-  50%  { background-position: 35% 40%, 75% 60%, 50% 45%, 100% 50%; }
-  100% { background-position: 0% 50%, 100% 45%, 60% 60%, 0% 50%; }
+  0%   { background-position: 0% 50%, 100% 45%, 55% 55%, 0% 50%; }
+  50%  { background-position: 25% 45%, 80% 55%, 50% 50%, 100% 50%; }
+  100% { background-position: 0% 50%, 100% 45%, 55% 55%, 0% 50%; }
 }
 
 /* Soft overlay glow for depth (slower + lower scale) */
-#gbc-hero::before{
+.gbc-hero::before{
   content:"";
   position:absolute;
   inset:-40%;
   background:
-    radial-gradient(circle at 30% 35%, rgba(255,255,255,.12), transparent 42%),
-    radial-gradient(circle at 70% 65%, rgba(246,162,26,.10), transparent 45%),
-    radial-gradient(circle at 55% 55%, rgba(53,193,106,.07), transparent 50%);
+    radial-gradient(circle at 30% 35%, rgba(255,255,255,.09), transparent 42%),
+    radial-gradient(circle at 70% 65%, rgba(246,162,26,.08), transparent 45%),
+    radial-gradient(circle at 55% 55%, rgba(53,193,106,.05), transparent 50%);
   filter: blur(2px);
-  opacity:.85;
+  opacity:.7;
   z-index:0;
   pointer-events:none;
   animation: gbcHeroGlow 18s ease-in-out infinite alternate !important;
 }
 @keyframes gbcHeroGlow{
-  0%{ transform: translate3d(-1%,-0.7%,0) scale(1); }
-  100%{ transform: translate3d(1%,0.7%,0) scale(1.03); }
+  0%{ transform: translate3d(-0.6%,-0.4%,0) scale(1); }
+  100%{ transform: translate3d(0.6%,0.4%,0) scale(1.02); }
 }
 
 /* Prevent anchor being hidden under sticky header */
 #browse-courses{ scroll-margin-top:120px; }
 
 /* Decorative SVGs */
-#gbc-hero .gbc-hero-svg{
+.gbc-hero .gbc-hero-svg{
   position:absolute;
   pointer-events:none;
   z-index:1;
 }
 
 /* ✅ aligned corners */
-#gbc-hero > .gbc-hero-svg.gbc-hero-svg--bl{
+.gbc-hero > .gbc-hero-svg.gbc-hero-svg--bl{
   bottom:0 !important;
   left:0 !important;
   right:auto !important;
 }
 
 /* ✅ Blue arrow less prominent */
-#gbc-hero .gbc-hero-svg--bl{
+.gbc-hero .gbc-hero-svg--bl{
   bottom:-60px;
   left:-60px;
   width:360px;
@@ -141,8 +132,8 @@ M.yui.loader = {modules: {}};
 }
 
 /* Layout */
-#gbc-hero .gbc-hero__container{
-  max-width:1320px;
+.gbc-hero .gbc-hero__container{
+  max-width:1280px;
   margin:0 auto;
   padding:56px 24px;
   display:flex;
@@ -153,20 +144,20 @@ M.yui.loader = {modules: {}};
 }
 
 /* Left */
-#gbc-hero .gbc-hero__left{
+.gbc-hero .gbc-hero__left{
   flex:1 1 55%;
   position:relative;
   z-index:5;
 }
 
 /* ✅ Text Card (improves readability) */
-#gbc-hero .gbc-hero__card{
+.gbc-hero .gbc-hero__card{
   max-width:720px;
   padding:26px 26px 24px;
   border-radius:18px;
   background: rgba(10, 30, 60, .55);
-  border: 1px solid rgba(255,255,255,.16);
-  box-shadow: 0 18px 36px rgba(0,0,0,.22);
+  border: 1px solid rgba(255,255,255,.20);
+  box-shadow: 0 20px 40px rgba(0,0,0,.22);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   position:relative;
@@ -174,27 +165,27 @@ M.yui.loader = {modules: {}};
 }
 
 /* ✅ White border at the TOP of the card */
-#gbc-hero .gbc-hero__card::before{
+.gbc-hero .gbc-hero__card::before{
   content:"";
   position:absolute;
   top:0; left:0; right:0;
-  height:2px;
-  background: rgba(255,255,255,.85);
+  height:3px;
+  background: linear-gradient(90deg, #1b6bd8 0%, #4cb6ff 45%, #18a35a 100%);
   opacity:.9;
 }
 
 /* Optional subtle internal highlight (very light) */
-#gbc-hero .gbc-hero__card::after{
+.gbc-hero .gbc-hero__card::after{
   content:"";
   position:absolute;
   inset:0;
-  background: radial-gradient(600px 240px at 20% 0%, rgba(255,255,255,.10), transparent 55%);
+  background: radial-gradient(600px 240px at 20% 0%, rgba(255,255,255,.08), transparent 55%);
   pointer-events:none;
-  opacity:.6;
+  opacity:.55;
 }
 
 /* Title – enforce against vvveb overrides */
-#gbc-hero h1{
+.gbc-hero h1{
   color:#fff !important;
   font-size:44px !important;
   line-height:1.18;
@@ -205,13 +196,13 @@ M.yui.loader = {modules: {}};
 }
 
 /* Serif accent */
-#gbc-hero .gbc-serif{
+.gbc-hero .gbc-serif{
   font-family:"IBM Plex Serif", Georgia, "Times New Roman", serif;
   font-weight:500;
 }
 
 /* Subtitle + Text */
-#gbc-hero .gbc-hero__subtitle{
+.gbc-hero .gbc-hero__subtitle{
   margin:0 0 18px;
   font-size:18px;
   line-height:1.55;
@@ -220,9 +211,9 @@ M.yui.loader = {modules: {}};
   position:relative;
   z-index:1;
 }
-#gbc-hero .gbc-hero__desc{
+.gbc-hero .gbc-hero__desc{
   font-size:16px;
-  line-height:1.7;
+  line-height:1.75;
   opacity:.92;
   max-width:85ch;
   margin:0 0 14px;
@@ -231,15 +222,16 @@ M.yui.loader = {modules: {}};
 }
 
 /* CTA */
-#gbc-hero .gbc-hero-cta{
+.gbc-hero .gbc-hero-cta{
   margin-top:22px;
   display:flex;
-  gap:14px;
-  flex-wrap:wrap;
+  flex-direction: column;
+  align-items:flex-start;
+  gap:10px;
   position:relative;
   z-index:1;
 }
-#gbc-hero .gbc-btn{
+.gbc-hero .gbc-btn{
   padding:14px 30px;
   border-radius:10px;
   font-weight:700;
@@ -250,25 +242,38 @@ M.yui.loader = {modules: {}};
   justify-content:center;
   transition:.15s ease;
 }
-#gbc-hero .gbc-btn--primary{
+.gbc-hero .gbc-btn--primary{
   background:#25b24a;
   color:#0B2B5B;
   box-shadow:0 10px 18px rgba(0,0,0,.18);
 }
-#gbc-hero .gbc-btn:hover{
+.gbc-hero .gbc-btn:hover{
   transform:translateY(-1px);
   filter:brightness(1.05);
 }
 
+.gbc-hero .gbc-hero__link{
+  font-size:14px;
+  font-weight:600;
+  color: rgba(255,255,255,.86);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color .15s ease, text-decoration-color .15s ease;
+}
+.gbc-hero .gbc-hero__link:hover{
+  color: #ffffff;
+}
+
 /* Right visual */
-#gbc-hero .gbc-hero__right{
+.gbc-hero .gbc-hero__right{
   flex:0 1 45%;
   display:flex;
   justify-content:flex-end;
+  padding-right: 24px;
   position:relative;
   z-index:2;
 }
-#gbc-hero .gbc-hero-image{
+.gbc-hero .gbc-hero-image{
   position:relative;
   width:100%;
   max-width:600px;
@@ -276,10 +281,11 @@ M.yui.loader = {modules: {}};
   display:flex;
   align-items:flex-end;
   justify-content:center;
+  transform: translateX(-20px);
 }
 
 /* Image */
-#gbc-hero .gbc-hero-image img{
+.gbc-hero .gbc-hero-image img{
   height:108%;
   object-fit:contain;
   filter: drop-shadow(0 18px 34px rgba(0,0,0,.25));
@@ -288,14 +294,14 @@ M.yui.loader = {modules: {}};
 }
 
 /* Shapes */
-#gbc-hero .gbc-shape{ position:absolute; border-radius:50%; z-index:1; }
-#gbc-hero .gbc-shape--spot{
+.gbc-hero .gbc-shape{ position:absolute; border-radius:50%; z-index:1; }
+.gbc-hero .gbc-shape--spot{
   width:520px;height:520px;
   bottom:40px;left:50%;
   transform:translateX(-50%);
   background: radial-gradient(circle, rgba(255,255,255,.20), transparent 60%);
 }
-#gbc-hero .gbc-shape--blob{
+.gbc-hero .gbc-shape--blob{
   width:520px;height:340px;
   bottom:46px;left:50%;
   transform:translateX(-50%) rotate(-10deg);
@@ -304,29 +310,39 @@ M.yui.loader = {modules: {}};
 }
 
 /* Ensure animations run even if theme tries to disable them */
-#gbc-hero,
-#gbc-hero::before{
+.gbc-hero,
+.gbc-hero::before{
   animation-play-state: running !important;
 }
 
 /* Responsive */
 @media(max-width:980px){
-  #gbc-hero .gbc-hero__container{ flex-direction:column; padding:44px 18px; gap:20px; }
-  #gbc-hero h1{ font-size:34px !important; }
-  #gbc-hero .gbc-btn{ width:100%; }
-  #gbc-hero .gbc-hero-image{ max-width:540px; height:380px; }
-  #gbc-hero .gbc-hero-svg--bl{ opacity:.20; }
-  #gbc-hero .gbc-hero__card{ width:100%; padding:22px 18px; border-radius:16px; }
+  .gbc-hero .gbc-hero__container{ flex-direction:column; padding:44px 18px; gap:20px; }
+  .gbc-hero h1{ font-size:34px !important; }
+  .gbc-hero .gbc-btn{ width:100%; }
+  .gbc-hero .gbc-hero__link{ align-self: center; }
+  .gbc-hero .gbc-hero__right{ padding-right: 0; }
+  .gbc-hero .gbc-hero-image{ max-width:540px; height:380px; }
+  .gbc-hero .gbc-hero-image{ transform: none; }
+  .gbc-hero .gbc-hero-svg--bl{ opacity:.20; }
+  .gbc-hero .gbc-hero__card{ width:100%; padding:22px 18px; border-radius:16px; }
 }
 
 /* Reduced motion (optional). Delete if you ALWAYS want animation. */
 @media (prefers-reduced-motion: reduce){
-  #gbc-hero{ animation: none !important; }
-  #gbc-hero::before{ animation: none !important; }
+  .gbc-hero{ animation: none !important; }
+  .gbc-hero::before{ animation: none !important; }
 }
 </style>
+</head>
+    <body class="block-content" data-editing="true" data-aos-easing="ease-in-out" data-aos-duration="1000" data-aos-delay="0">
+        
+        
 
-<section id="gbc-hero">
+<!-- ========================= HERO SECTION – Culture Hub Paste-ready | Moodle-safe ========================= -->
+
+
+<section id="gbc-hero" class="gbc-hero">
   <!-- Decorative SVGs -->
   <img src="https://www.culturehub.globalbusinessculture.com/pluginfile.php/1/local_edwiserpagebuilder/media/307242275/Blue.svg" class="gbc-hero-svg gbc-hero-svg--bl" alt="" aria-hidden="true">
 
@@ -355,6 +371,7 @@ M.yui.loader = {modules: {}};
 
         <div class="gbc-hero-cta">
           <a href="#browse-courses" class="gbc-btn gbc-btn--primary">Browse Courses</a>
+          <a href="https://www.culturehub.globalbusinessculture.com/pricing" class="gbc-hero__link">View Pricing</a>
         </div>
       </div>
     </div>
