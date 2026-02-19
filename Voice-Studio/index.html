@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Innovation Lab Voice Studio</title>
+  <style>
+    :root { --bg:#0b1220; --card:#111a2e; --muted:#7f8aa3; --text:#e8eefc; --accent:#6aa6ff; --danger:#ff6a6a; }
+    *{ box-sizing:border-box; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; }
+    body{ margin:0; background:linear-gradient(180deg,#071022,#0b1220); color:var(--text); }
+    .wrap{ max-width:980px; margin:24px auto; padding:0 16px; }
+    .header{ display:flex; gap:12px; align-items:center; justify-content:space-between; margin-bottom:16px; }
+    .title{ font-size:20px; font-weight:700; }
+    .sub{ color:var(--muted); font-size:13px; margin-top:4px; }
+    .grid{ display:grid; grid-template-columns: 1fr; gap:14px; }
+    @media(min-width:900px){ .grid{ grid-template-columns: 1.1fr .9fr; } }
+    .card{ background:rgba(17,26,46,.92); border:1px solid rgba(255,255,255,.07); border-radius:16px; padding:16px; box-shadow:0 10px 30px rgba(0,0,0,.25); }
+    label{ display:block; font-size:12px; color:var(--muted); margin:10px 0 6px; }
+    select, input, textarea{
+      width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(255,255,255,.10);
+      background:rgba(7,16,34,.8); color:var(--text); outline:none;
+    }
+    textarea{ min-height:160px; resize:vertical; line-height:1.4; }
+    .row{ display:grid; grid-template-columns: 1fr 1fr; gap:10px; }
+    .row3{ display:grid; grid-template-columns: 1.2fr .8fr; gap:10px; }
+    .btns{ display:flex; gap:10px; margin-top:14px; flex-wrap:wrap; }
+    button{
+      padding:10px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.12);
+      background:rgba(106,166,255,.15); color:var(--text); cursor:pointer;
+    }
+    button.primary{ background:rgba(106,166,255,.28); border-color:rgba(106,166,255,.45); }
+    button:disabled{ opacity:.5; cursor:not-allowed; }
+    .pill{ display:inline-flex; align-items:center; gap:8px; padding:8px 10px; border-radius:999px;
+      border:1px solid rgba(255,255,255,.10); background:rgba(7,16,34,.6); color:var(--muted); font-size:12px; }
+    .ok{ color:#8bffb0; }
+    .warn{ color:#ffd37a; }
+    .err{ color:var(--danger); }
+    .mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
+    .small{ font-size:12px; color:var(--muted); }
+    .link{ color:var(--accent); text-decoration:none; }
+    .hr{ height:1px; background:rgba(255,255,255,.08); margin:12px 0; }
+    .statusBox{ display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; }
+    .kpi{ display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+    .right{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+    .spinner{
+      width:12px; height:12px; border:2px solid rgba(255,255,255,.22); border-top-color:rgba(106,166,255,.9);
+      border-radius:50%; display:inline-block; animation:spin 1s linear infinite;
+    }
+    @keyframes spin { to{ transform:rotate(360deg); } }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+    <div>
+      <div class="title">Innovation Lab – Voice Studio</div>
+      <div class="sub">Generate narration using your internal voice-cloned models (XTTS). Queued generation + download.</div>
+    </div>
+    <div class="pill">
+      <span id="apiDot" class="warn">●</span>
+      <span id="apiText">API: not checked</span>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="row3">
+        <div>
+          <label>API Base URL</label>
+          <input id="apiBase" class="mono" placeholder="e.g. http://localhost:8000" value="http://localhost:8000" />
+          <div class="small">If hosted under IIS later, this could be <span class="mono">https://salesportal.aptaracorp.com/Innovation_Lab/voice</span></div>
+        </div>
+        <div>
+          <label>API Key (optional)</label>
+          <input id="apiKey" class="mono" placeholder="X-API-Key value" />
+          <div class="small">Only needed if your API requires it.</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label>Voice</label>
+          <select id="voiceSelect"></select>
+          <div class="small">Populated from <span class="mono">GET /voices</span></div>
+        </div>
+        <div>
+          <label>Language</label>
+          <select id="langSelect">
+            <option value="en" selected>English (en)</option>
+            <option value="hi">Hindi (hi)</option>
+            <option value="ta">Tamil (ta)</option>
+            <option value="te">Telugu (te)</option>
+            <option value="mr">Marathi (mr)</option>
+            <option value="bn">Bengali (bn)</option>
+            <option value="gu">Gujarati (gu)</option>
+            <option value="kn">Kannada (kn)</option>
+            <option value="ml">Malayalam (ml)</option>
+            <option value="ur">Urdu (ur)</option>
+          </select>
+        </div>
+      </div>
+
+      <label>Text</label>
+      <textarea id="textInput" placeholder="Paste your narration script here..."></textarea>
+      <div class="small">Tip: for faster processing on CPU, generate in paragraphs (smaller chunks).</div>
+
+      <div class="btns">
+        <button id="btnRefresh">Refresh Voices</button>
+        <button id="btnCheck" class="primary">Check API</button>
+        <button id="btnGenerate" class="primary">Generate</button>
+        <button id="btnClear">Clear</button>
+      </div>
+
+      <div class="hr"></div>
+
+      <div class="statusBox">
+        <div class="kpi">
+          <span class="pill">Job: <span id="jobId" class="mono">—</span></span>
+          <span class="pill">Status: <span id="jobStatus">—</span> <span id="spin" style="display:none" class="spinner"></span></span>
+        </div>
+        <div class="right">
+          <a id="downloadLink" class="link" href="#" style="display:none" download>Download WAV</a>
+          <button id="btnCopy" style="display:none">Copy Download URL</button>
+        </div>
+      </div>
+
+      <div style="margin-top:12px;">
+        <audio id="player" controls style="width:100%; display:none;"></audio>
+      </div>
+
+      <div id="errorBox" class="small err" style="margin-top:10px; display:none;"></div>
+    </div>
+
+    <div class="card">
+      <div style="font-weight:700; margin-bottom:6px;">How it works</div>
+      <div class="small">
+        <ol>
+          <li>UI calls <span class="mono">GET /voices</span> to list available voice WAVs.</li>
+          <li>Click <b>Generate</b> → <span class="mono">POST /generate</span> returns a <span class="mono">job_id</span>.</li>
+          <li>UI polls <span class="mono">GET /status/{job_id}</span> until <b>done</b>.</li>
+          <li>Audio loads from <span class="mono">/files/{job_id}.wav</span>.</li>
+        </ol>
+        <div class="hr"></div>
+        <div style="font-weight:700; margin-bottom:6px;">Recommended for large teams</div>
+        <ul>
+          <li>Keep a queue (single synthesis at a time on CPU).</li>
+          <li>Set max text length (e.g. 800–1500 chars/request).</li>
+          <li>Use IIS auth / SSO, or an API key header.</li>
+          <li>Add MP3 export later to reduce file sizes.</li>
+        </ul>
+        <div class="hr"></div>
+        <div class="small">
+          If your UI is hosted on IIS and API is on same domain/path, CORS is not an issue.
+          If cross-domain, enable CORS in FastAPI.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const $ = (id) => document.getElementById(id);
+
+  const apiBaseEl = $("apiBase");
+  const apiKeyEl = $("apiKey");
+  const voiceSelect = $("voiceSelect");
+  const langSelect = $("langSelect");
+  const textInput = $("textInput");
+
+  const apiDot = $("apiDot");
+  const apiText = $("apiText");
+
+  const btnRefresh = $("btnRefresh");
+  const btnCheck = $("btnCheck");
+  const btnGenerate = $("btnGenerate");
+  const btnClear = $("btnClear");
+  const btnCopy = $("btnCopy");
+
+  const jobIdEl = $("jobId");
+  const jobStatusEl = $("jobStatus");
+  const spin = $("spin");
+  const downloadLink = $("downloadLink");
+  const player = $("player");
+  const errorBox = $("errorBox");
+
+  let pollTimer = null;
+  let lastDownloadUrl = "";
+
+  function headers() {
+    const h = { "Content-Type": "application/json" };
+    const key = apiKeyEl.value.trim();
+    if (key) h["X-API-Key"] = key;
+    return h;
+  }
+
+  function base() {
+    return apiBaseEl.value.trim().replace(/\/+$/, "");
+  }
+
+  function showError(msg) {
+    errorBox.style.display = msg ? "block" : "none";
+    errorBox.textContent = msg || "";
+  }
+
+  function setApiStatus(ok, msg) {
+    apiDot.className = ok ? "ok" : "warn";
+    apiText.textContent = msg;
+  }
+
+  async function checkApi() {
+    showError("");
+    setApiStatus(false, "API: checking...");
+    try {
+      // Prefer /voices; if it works, API is alive
+      const r = await fetch(`${base()}/voices`, { headers: headers() });
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      setApiStatus(true, "API: reachable");
+      await refreshVoices();
+    } catch (e) {
+      setApiStatus(false, "API: not reachable");
+      showError("Could not reach API. Check Base URL / IIS proxy / firewall. " + e.message);
+    }
+  }
+
+  async function refreshVoices() {
+    showError("");
+    voiceSelect.innerHTML = "";
+    try {
+      const r = await fetch(`${base()}/voices`, { headers: headers() });
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      const data = await r.json();
+      const voices = data.voices || [];
+      if (!voices.length) {
+        const opt = document.createElement("option");
+        opt.value = "";
+        opt.textContent = "No voices found";
+        voiceSelect.appendChild(opt);
+        return;
+      }
+      for (const v of voices) {
+        const opt = document.createElement("option");
+        opt.value = v;
+        opt.textContent = v;
+        voiceSelect.appendChild(opt);
+      }
+    } catch (e) {
+      showError("Failed to load voices: " + e.message);
+    }
+  }
+
+  function resetJobUI() {
+    jobIdEl.textContent = "—";
+    jobStatusEl.textContent = "—";
+    spin.style.display = "none";
+    downloadLink.style.display = "none";
+    btnCopy.style.display = "none";
+    player.style.display = "none";
+    player.src = "";
+    lastDownloadUrl = "";
+    if (pollTimer) { clearInterval(pollTimer); pollTimer = null; }
+  }
+
+  async function generate() {
+    showError("");
+    resetJobUI();
+
+    const voice = voiceSelect.value;
+    const language = langSelect.value;
+    const text = textInput.value.trim();
+
+    if (!voice) return showError("Please select a voice.");
+    if (!text) return showError("Please enter text to generate.");
+
+    btnGenerate.disabled = true;
+    jobStatusEl.textContent = "queued";
+    spin.style.display = "inline-block";
+
+    try {
+      const payload = { text, voice, language };
+      const r = await fetch(`${base()}/generate`, {
+        method: "POST",
+        headers: headers(),
+        body: JSON.stringify(payload)
+      });
+      if (!r.ok) {
+        const t = await r.text();
+        throw new Error(`HTTP ${r.status}: ${t}`);
+      }
+      const data = await r.json();
+      const jobId = data.job_id;
+      jobIdEl.textContent = jobId || "—";
+      jobStatusEl.textContent = "queued";
+
+      // Build absolute download URL
+      // data.download_url might be absolute or relative
+      let dl = data.download_url || "";
+      if (dl && dl.startsWith("/")) dl = base() + dl;
+      lastDownloadUrl = dl;
+
+      // Poll status
+      pollTimer = setInterval(() => pollStatus(jobId), 2000);
+      await pollStatus(jobId);
+    } catch (e) {
+      spin.style.display = "none";
+      jobStatusEl.textContent = "error";
+      showError("Generate failed: " + e.message);
+    } finally {
+      btnGenerate.disabled = false;
+    }
+  }
+
+  async function pollStatus(jobId) {
+    try {
+      const r = await fetch(`${base()}/status/${jobId}`, { headers: headers() });
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      const data = await r.json();
+
+      const status = data.status || "unknown";
+      jobStatusEl.textContent = status;
+
+      if (status === "done") {
+        spin.style.display = "none";
+        if (pollTimer) { clearInterval(pollTimer); pollTimer = null; }
+
+        // prefer download URL derived from job_id (server uses /files/{job_id}.wav)
+        const url = lastDownloadUrl || `${base()}/files/${jobId}.wav`;
+
+        downloadLink.href = url;
+        downloadLink.style.display = "inline";
+        btnCopy.style.display = "inline";
+
+        player.src = url;
+        player.style.display = "block";
+      } else if (status === "error") {
+        spin.style.display = "none";
+        if (pollTimer) { clearInterval(pollTimer); pollTimer = null; }
+        showError(data.error || "Unknown error during synthesis.");
+      }
+    } catch (e) {
+      // Don’t spam errors on intermittent network; show once
+      showError("Status check failed: " + e.message);
+    }
+  }
+
+  async function copyDownloadUrl() {
+    if (!lastDownloadUrl) return;
+    try {
+      await navigator.clipboard.writeText(lastDownloadUrl);
+      btnCopy.textContent = "Copied!";
+      setTimeout(() => btnCopy.textContent = "Copy Download URL", 1200);
+    } catch {
+      showError("Could not copy to clipboard (browser permission). Download URL: " + lastDownloadUrl);
+    }
+  }
+
+  // Wire up buttons
+  btnRefresh.addEventListener("click", refreshVoices);
+  btnCheck.addEventListener("click", checkApi);
+  btnGenerate.addEventListener("click", generate);
+  btnClear.addEventListener("click", () => { textInput.value = ""; showError(""); });
+  btnCopy.addEventListener("click", copyDownloadUrl);
+
+  // Init
+  resetJobUI();
+  refreshVoices().catch(() => {});
+</script>
+</body>
+</html>
